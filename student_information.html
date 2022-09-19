@@ -5,11 +5,20 @@
             Student Information System
         </title>
         <style>
+            #div1{
+                border: 2px solid red;
+            }
             #heading{
                 text-align: center;
                 margin-bottom: 75px;
             }
+            #div2{
+                height: 50px;
+                border: 2px solid green;
+                margin-top: 20px;
+            }
             .search_record{
+                margin-top: 10px;
                 text-align: center;
             }
             #rollno{
@@ -26,16 +35,43 @@
                 margin-right: 22px;
                 font-size: 25px;
             }
+            #div3{
+                border: 2px solid yellow;
+                margin-top: 30px;
+                height: 500px;
+                padding-bottom: 50px;
+            }
+            #display{
+                height: 450px;
+                margin-top: 40px;
+                margin-right: 300px;
+                margin-bottom: 20px;
+                margin-left: 400px;
+                border: 2px solid salmon;
+            }
+            #stuinfo {
+                display: block;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
-        <div id="heading"><h1>Student Information System</h1></div>
-        <div class="search_record">
-            <form>
-                <label for="rollno" ><b>Enter Roll Number: </b></label>  
-                <input type="text" id="rollno">
-                <input type="button" value="search" id="search">
-            </form>
+        <div id="div1">
+            <div id="heading"><h1>Student Information System</h1></div>
+        </div>
+        <div id="div2">
+            <div class="search_record">
+                <form>
+                    <label for="rollno" ><b>Enter Roll Number: </b></label>  
+                    <input type="text" id="rollno">
+                    <input type="button" value="search" id="search">
+                </form>
+            </div>
+        </div>
+        <div id="div3">
+            <div id="display">
+                <output name="display" id="stuinfo">Student Information</output>
+            </div>
         </div>
     </body>    
 </html>
