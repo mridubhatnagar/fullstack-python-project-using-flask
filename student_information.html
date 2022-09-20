@@ -47,11 +47,33 @@
                 margin-right: 300px;
                 margin-bottom: 20px;
                 margin-left: 400px;
+                padding-top: 50px;
                 border: 2px solid salmon;
             }
-            #stuinfo {
-                display: block;
-                text-align: center;
+            table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                height: 350px;
+                width: 400px;
+            }
+            tr{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            .fieldname{
+                text-align: right;
+                padding-right: 20px;
+            }
+            .fieldvalues{
+                text-align: left;
+                padding-left: 20px;
+            }
+            #studentinfo{
+                margin: auto;
             }
         </style>
     </head>
@@ -70,7 +92,32 @@
         </div>
         <div id="div3">
             <div id="display">
-                <output name="display" id="stuinfo">Student Information</output>
+                <table id="studentinfo">
+                    <tr>
+                        <td class="fieldname">Student Name</td>
+                        <td class="fieldvalues">ABC</td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">Roll Number</td>
+                        <td class="fieldvalues">U101113FCS103</td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">School Name</td>
+                        <td class="fieldvalues">Emerald Heights</td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">City of Residence</td>
+                        <td class="fieldvalues">Indore</td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">10th Grade Score</td>
+                        <td class="fieldvalues">85.5%</td>
+                    </tr>
+                    <tr>
+                        <td class="fieldname">12th Grade Score</td>
+                        <td class="fieldvalues">85%</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </body>    
