@@ -86,7 +86,7 @@
                 <form>
                     <label for="rollno" ><b>Enter Roll Number: </b></label>  
                     <input type="text" id="rollno">
-                    <input type="button" value="search" id="search">
+                    <input type="button" value="search" id="search" onclick="loadDetails()">
                 </form>
             </div>
         </div>
@@ -94,7 +94,7 @@
             <div id="display">
                 <table id="studentinfo">
                     <tr>
-                        <td class="fieldname">Student Name</td>
+                        <td class="fieldname" id="field1">Student Name</td>
                         <td class="fieldvalues">ABC</td>
                     </tr>
                     <tr>
@@ -120,6 +120,21 @@
                 </table>
             </div>
         </div>
+        <script type="text/javascript">
+            function loadDetails(){
+                value = document.getElementById('rollno').value;
+                console.log(value);
+                // TODO - Send API call to flask with JSON data
+                // if Flask API returns the data call function showDetails()
+                // if Flask API returns empty dictionary call function hideDetails()
+            }
+            function showDetails(){
+                
+            }
+            function hideDetails(){
+
+            }
+        </script>
     </body>    
 </html>
 
