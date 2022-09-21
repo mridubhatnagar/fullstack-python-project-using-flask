@@ -6,3 +6,7 @@
 
 ### Page Layout v2
 ![Screenshot from 2022-09-19 14-41-26](https://user-images.githubusercontent.com/16894718/190986781-d4bd8343-716d-4880-ad32-d33743e350e7.png)
+
+### Page Layout v3
+
+![Screenshot from 2022-09-20 16-15-29](https://user-images.githubusercontent.com/16894718/191437733-b2b71415-12eb-41ed-bd6c-49e73ed64049.png)
