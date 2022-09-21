@@ -1,5 +1,5 @@
 import json
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
@@ -33,4 +33,4 @@ def student_information():
 
             }
     }
-    return jsonify(studinfo)
+    return render_template("student_information.html", data=jsonify(studinfo))
