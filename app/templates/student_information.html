@@ -4,10 +4,8 @@
         <title>
             Student Information System
         </title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <style>
-            #div1{
-                border: 2px solid red;
-            }
             #heading{
                 text-align: center;
                 margin-bottom: 75px;
@@ -40,6 +38,7 @@
                 margin-top: 30px;
                 height: 500px;
                 padding-bottom: 50px;
+                display: none;
             }
             #display{
                 height: 450px;
@@ -75,6 +74,10 @@
             #studentinfo{
                 margin: auto;
             }
+            #div4{
+                display: none;
+
+            }
         </style>
     </head>
     <body>
@@ -83,7 +86,7 @@
         </div>
         <div id="div2">
             <div class="search_record">
-                <form>
+                <form">
                     <label for="rollno" ><b>Enter Roll Number: </b></label>  
                     <input type="text" id="rollno">
                     <input type="button" value="search" id="search" onclick="loadDetails()">
@@ -95,44 +98,54 @@
                 <table id="studentinfo">
                     <tr>
                         <td class="fieldname" id="field1">Student Name</td>
-                        <td class="fieldvalues">ABC</td>
+                        <td class="fieldvalues" id="studentname"></td>
                     </tr>
                     <tr>
-                        <td class="fieldname">Roll Number</td>
-                        <td class="fieldvalues">U101113FCS103</td>
+                        <td class="fieldname">Age</td>
+                        <td class="fieldvalues" id="age"></td>
                     </tr>
                     <tr>
-                        <td class="fieldname">School Name</td>
-                        <td class="fieldvalues">Emerald Heights</td>
+                        <td class="fieldname">Gender</td>
+                        <td class="fieldvalues" id="gender"></td>
                     </tr>
                     <tr>
-                        <td class="fieldname">City of Residence</td>
-                        <td class="fieldvalues">Indore</td>
-                    </tr>
-                    <tr>
-                        <td class="fieldname">10th Grade Score</td>
-                        <td class="fieldvalues">85.5%</td>
-                    </tr>
-                    <tr>
-                        <td class="fieldname">12th Grade Score</td>
-                        <td class="fieldvalues">85%</td>
+                        <td class="fieldname">House</td>
+                        <td class="fieldvalues" id="house"></td>
                     </tr>
                 </table>
             </div>
+        </div>
+        <div id="div4">
+            <div id="message">Entered roll no. doesn't exists.</div>
         </div>
         <script type="text/javascript">
             function loadDetails(){
                 value = document.getElementById('rollno').value;
                 console.log(value);
-                // TODO - Send API call to flask with JSON data
-                // if Flask API returns the data call function showDetails()
-                // if Flask API returns empty dictionary call function hideDetails()
-            }
-            function showDetails(){
-                
-            }
-            function hideDetails(){
+                $.ajax({
+                    type: "POST",
+                    url: "/",
+                    data: {"rollno.": value},
+                    success: function(result) {
+                        var data = result
+                        if (Object.keys(data).length != 0) {
+                            document.getElementById("div3").style.display = "block";
+                            document.getElementById("studentname").innerHTML = data["student_name"];
+                            document.getElementById("age").innerHTML = data["age"];
+                            document.getElementById("gender").innerHTML = data["gender"];
+                            document.getElementById("house").innerHTML = data["house"];
+                            document.getElementById("div4").style.display = "none";
+                            
+                        }
+                        else {
+                            document.getElementById("div3").style.display = "none";
+                            document.getElementById("div4").style.display = "block";
+                            document.getElementById("div4").style.textAlign = "center";
+                            document.getElementById("div4").style.color = "red";
 
+                        }
+                    }
+                })
             }
         </script>
     </body>    

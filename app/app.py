@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def student_information():
     if request.method == "POST":
-        rollno = request.form.get("rollno")
+        rollno = request.form.get("rollno.")
+        print(f"Roll No.: {rollno}")
         studinfo = {
                 "U101113FCS103": {
                     "student_name": "Harry Potter",
@@ -39,7 +40,8 @@ def student_information():
         if rollno in studinfo:
             data = jsonify(studinfo[rollno])
         else:
-            data = ""
-        return render_template("student_information.html", data=data)
+            data = jsonify({})
+            print("No data")
+        return data
     elif request.method == "GET":
         return render_template("student_information.html")
