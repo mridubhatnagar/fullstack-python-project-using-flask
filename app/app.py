@@ -28,7 +28,7 @@ def student_information():
                     "gender": "Male",
                     "house": "Griffendor"
                 },
-                "U101113FCS105": {
+                "U101113FCS106": {
                     "student_name": "Albus Dumbeldore",
                     "age": 35,
                     "gender": "Male",
